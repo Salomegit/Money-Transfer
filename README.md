@@ -105,7 +105,7 @@ This is a simple Django REST Framework (DRF) API for managing user money transfe
   "id": 1,
   "source_account": 1,
   "destination_account": 2,
-  "amount": 1000.0,
+  "amount": 100.0,
   "created_at": "2025-01-08T12:00:00Z"
 }
 ```
