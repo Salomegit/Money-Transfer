@@ -53,7 +53,7 @@ This is a simple Django REST Framework (DRF) API for managing user money transfe
 #### Request Body:
 ```json
 {
-  "account_no": "account1",
+  "account_no": 001,
   "balance": 1000.0
 }
 ```
@@ -62,7 +62,7 @@ This is a simple Django REST Framework (DRF) API for managing user money transfe
 ```json
 {
   "id": 1,
-  "account_no": "account1",
+  "account_no": 001,
   "balance": 1000.0
 }
 ```
@@ -78,7 +78,7 @@ This is a simple Django REST Framework (DRF) API for managing user money transfe
 ```json
 {
   "id": 1,
-  "account_no": "account1",
+  "account_no": 001,
   "balance": 1000.0
 }
 ```
@@ -87,3 +87,27 @@ This is a simple Django REST Framework (DRF) API for managing user money transfe
 
 ### 3. **Transfer Money Between Accounts**
 
+
+**URL**: `/accounts/transactions/`  
+**Method**: `POST`  
+**Description**: Handles the transfer of funds between accounts.
+#### Request Body:
+```json
+{
+  "source_account": 1,            // ID of the source account 
+  "destination_account": 2,       // ID of the destination account 
+  "amount": 100.0                // Amount to be transferred 
+}
+```
+#### Response:
+```json
+{
+  "id": 1,
+  "source_account": 1,
+  "destination_account": 2,
+  "amount": 1000.0,
+  "created_at": "2025-01-08T12:00:00Z"
+}
+```
+
+---

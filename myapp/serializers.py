@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Account, Transaction
+from .models import Account, Account_Transaction
 
 class AccountSerializer(serializers.ModelSerializer):
     class Meta:
@@ -15,7 +15,7 @@ class AccountSerializer(serializers.ModelSerializer):
 
 class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Transaction
+        model = Account_Transaction
         fields = ['id', 'source_account', 'destination_account', 'amount', 'timestamp']
 
     def validate(self, data):

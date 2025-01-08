@@ -23,7 +23,7 @@ class Account(models.Model):
         self.save()
 
 
-class Transaction(models.Model):
+class Account_Transaction(models.Model):
     source_account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name="outgoing_transactions", null=True, blank=True)
     destination_account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name="incoming_transactions")
     amount = models.FloatField()
