@@ -7,7 +7,7 @@ class AccountSerializer(serializers.ModelSerializer):
         fields = ['id', 'account_no', 'balance']
  
     def validate_balance(self, value):
-        """Balance should always be greater than 0 when creating an account."""
+        # Balance should always be greater than 0 when creating an account.
         if value <= 0:
             raise serializers.ValidationError("The starting balance must be greater than zero.")
         return value
