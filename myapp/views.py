@@ -21,7 +21,7 @@ class CreateAccountView(APIView):
 class GetAccountView(APIView):
     def get(self, request, account_id):
         try:
-            account = Account.objects.get(id=account_id)
+            account = Account.objects.select_for_update().get(id=account_id)
         except Account.DoesNotExist:
             return Response({"error": "Account not found"}, status=status.HTTP_404_NOT_FOUND)
         
